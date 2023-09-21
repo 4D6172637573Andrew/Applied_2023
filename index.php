@@ -65,7 +65,7 @@ include_once "header.php"
 <div class="card-body">
     <h5 class="card-title">HANGMAN</h5>
     <p class="card-text">
-      The object of hangman is to guess the secret word before the stick figure is hung. 
+      Guess the secret word before the stick figure is hung. 
       Hangman is a simple game to test player knowledge.
     </p>
     <a href="Hangman.php" class="btn btn-outline-warning">Go To Hangman</a>
