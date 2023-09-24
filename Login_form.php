@@ -1,5 +1,5 @@
 <?php
-include_once "header.php"
+include_once "header_login.php"
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,8 @@ include_once "header.php"
                 <label><input type="checkbox"> Remember me</label>
                 <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn btn-outline-success">Login</button>
+            <a href="index_main.php" class="btn btn-outline-success">Login</a>
+            
             <div class="register-link">
                 <p>No account? <a href="#">Signup</a></p>
             </div>

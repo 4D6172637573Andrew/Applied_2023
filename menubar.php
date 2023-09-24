@@ -1,8 +1,8 @@
 <header>
-            <a href="index.php" class="logo">Marcus 2023</a>
+            <a href="index_main.php" class="logo">Marcus 2023</a>
             <ul>
                 
-            <li><a href="login_form.php">LOGIN</a></li>
+            <li><a href="index.php">LOGOUT</a></li>
             <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="phpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             PHP
