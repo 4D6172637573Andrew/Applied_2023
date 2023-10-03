@@ -19,6 +19,7 @@ function generateFormObject() {
 $(document).on('click', ".calculate_pay", function (event) {
     event.preventDefault();
     alert("calculate pay function is not functional yet.");
+    console.log('this no funtion L hahaha lmao trashy noob');
 });
 
 $(document).on('click', '.delete_shift', function (event) {
@@ -51,7 +52,34 @@ $(document).on('click', '.row_delete', function (event) {
 
 
 
-$("#btn_add_shift").on('click', function (event) {
+// $("#btn_add_shift").on('click', function (event) {
+//   event.preventDefault();
+
+//   var sDate = $("#s_date").val();
+//   var sTime = $("#s_time").val();
+//   var eTime = $("#e_time").val();
+
+//   if (!sDate || !sTime || !eTime) {
+//       alert("Please make sure all input fields are filled in.");
+//       console.log('l')
+//       return; 
+//   }
+
+//   var input_form_data = generateFormObject();
+//   $.ajax({
+//       url: "add_shift.php",
+//       method: "POST",
+//       data: input_form_data,
+//       success: function (response) {
+//           location.reload();
+//           console.log(response);
+//       }
+//   });
+// });
+
+
+
+$(document).on('click', "#btn_add_shift", function (event) {
   event.preventDefault();
 
   var sDate = $("#date").val();
@@ -60,7 +88,7 @@ $("#btn_add_shift").on('click', function (event) {
 
   if (!sDate || !sTime || !eTime) {
       alert("Please make sure all input fields are filled in.");
-      return; 
+      return;
   }
 
   var input_form_data = generateFormObject();
@@ -74,7 +102,15 @@ $("#btn_add_shift").on('click', function (event) {
       }
   });
 });
-
+function generateFormObject() {
+  let form = document.getElementById("pay_form");
+  let formData = new FormData(form);
+  let formObject = {};
+  formData.forEach((value, key) => {
+      formObject[key] = value;
+  });
+  return formObject;
+}
 
 $(document).on('click', ".btn_edit_fixed", function () {
     $.ajax({
