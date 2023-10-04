@@ -9,8 +9,7 @@
             <img src="moon.png" id="moon">
             <img src="mountain.png" id="mountain">
             <img src="road.png" id="road">
-            <h2 id="text">PAYCAL®</h2>
-            <a href="#" class="btn">Login</a>
+            <h2 id="text">Applied 2023</h2>
         </section>
         <script type="text/javascript">
             // let stars = document.getElementById("stars");

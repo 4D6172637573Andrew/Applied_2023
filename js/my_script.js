@@ -33,6 +33,7 @@ $(document).on('click', '.delete_shift', function (event) {
 });
 
 $(document).on('click', '.row_delete', function (event) {
+    event.preventDefault();
     var rowId = $(this).data('row-id');
     console.log("Row ID to delete: " + rowId);
     $.ajax({
@@ -49,33 +50,6 @@ $(document).on('click', '.row_delete', function (event) {
 
     });
 });
-
-
-
-// $("#btn_add_shift").on('click', function (event) {
-//   event.preventDefault();
-
-//   var sDate = $("#s_date").val();
-//   var sTime = $("#s_time").val();
-//   var eTime = $("#e_time").val();
-
-//   if (!sDate || !sTime || !eTime) {
-//       alert("Please make sure all input fields are filled in.");
-//       console.log('l')
-//       return; 
-//   }
-
-//   var input_form_data = generateFormObject();
-//   $.ajax({
-//       url: "add_shift.php",
-//       method: "POST",
-//       data: input_form_data,
-//       success: function (response) {
-//           location.reload();
-//           console.log(response);
-//       }
-//   });
-// });
 
 
 
@@ -142,20 +116,13 @@ $(document).on('click', ".btn_edit_fixed", function () {
     });
 });
 
-$(document).on('submit','#btn_edit_fixed', function (event){
-    event.preventDefault();
-    var resources_form_data = $(this).serialize();
-    alert(resources_form_data);
-    $.ajax({
-        url: "fixed_row.php",
-        method: "POST",
-        data: resources_from_data,
-        success: function (response) {
-            $('#edit_value').modal('hide');
-            location.reload();
-        }
-    });
-});
+
+
+
+
+
+
+
 
 $(function() {
   $(".doodleEdit").dblclick(function(e) {

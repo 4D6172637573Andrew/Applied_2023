@@ -1,6 +1,5 @@
 <?php
 include_once "header.php";
-include_once "parallax.php";
 $start_date_str = (date("Y-m-d"));
 $date = strtotime($start_date_str);
 $s_date = date('d-m-20y', $date);
@@ -21,14 +20,18 @@ $rec_count = $row['count'];
 
 <div class="container-fluid">
     <head>
-        <meta charset="UTF-8"><br><br><br><br><br>
+        <meta charset="UTF-8"><br><r><br><br>
         <title>PAYCAL®</title>
         <link rel="stylesheet" type="text/css" href="paycal_style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="table_style.css"> -->
+        
         
     </head>
 </div>
 
 <div class="container-fluid mb-1">
+<h1><span class="rectangle">PAYCAL®</span></h1>
+
     <div class="row">
         <div class="col-lg-2">
             <form method="post" id="pay_form">
@@ -70,7 +73,7 @@ $rec_count = $row['count'];
 
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-2">
+        <div class="col-lg-2 buttons">
             <h5>Options:</h5>
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="s_holi">
@@ -82,26 +85,26 @@ $rec_count = $row['count'];
             </div>
             <button id="btn_add_shift" name="btn_add_shift" type="button"
                     style="width: 90%"
-                    class="btn btn-outline-warning  mb-3 add_shift shadow-sm">
-                Add shift
+                    class="mb-3 add_shift shadow-sm">
+                ADD SHIFT
             </button>
 
             <button id="btn_delete_shift" name="btn_delete_shift" type="button" 
                     style="width: 90%"
-                    class="btn btn-outline-warning  mb-3 delete_shift shadow-sm">
-                Clear all shifts
+                    class="mb-3 delete_shift shadow-sm">
+                CLEAR ALL
             </button>
 
             <button type="button"
                     style="width: 90%"
-                    class="btn btn-outline-warning mb-3" data-bs-toggle="modal" data-bs-target="#fixed_values_form">
-                Edit Fixed
+                    class="mb-3" data-bs-toggle="modal" data-bs-target="#fixed_values_form">
+                EDIT FIXED
             </button>
 
             <button id="btn_calculate_pay" name="btn_calculate_pay" type="button"
                     style="width: 90%"
-                    class="btn btn-outline-warning  mb-3 calculate_pay shadow-sm">
-                Calculate pay
+                    class="mb-3 calculate_pay shadow-sm">
+                CALCULATE
             </button>
             
 
@@ -111,11 +114,12 @@ $rec_count = $row['count'];
         </form>
 
 
-        <div class="col-lg-5 navbar-nav-scroll table-body">
-            <table class="  table table-striped table-bordered table-sm table-hover">
+        <div class="col-lg-5 table-body">
+        <h5>Shifts:</h5>
+            <table class="styled-table">
                 <thead class="thead-dark">
 
-                <tr>
+                <tr class="active-row">
                     <th class=scope="col">id</th>
                     <th class=scope="col">user_id</th>
                     <th class="doodleEdit" scope="col">rate</th>
@@ -178,7 +182,7 @@ $rec_count = $row['count'];
 </a>
 <a href="#" 
 title="Delete" 
-class="btn_edit_fixed" data-bs-toggle="modal" data-bs-target="#edit_values_form"
+class="btn_edit_values" data-bs-toggle="modal" data-bs-target="#edit_values_form"
 style="color: black;
 font-size:20px;" 
 data-row-id="' . $row["id"] . '">

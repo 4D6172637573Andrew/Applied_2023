@@ -1,29 +1,9 @@
 <?php
-include_once "header.php"
+include_once "header.php";
+include_once "parallax.php";
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Applied 2023</title>
-        <link rel="stylesheet" type="text/css" href="parallax_style.css">
-    </head>
-    <body><br>
-        <section>
-            <img src="classroom.png" id="classroom">
-        </section>
-        <script type="text/javascript">
-            let road = document.getElementById("classroom");
-
-            window.addEventListener('scroll', function(){
-                var value = window.scrollY;
-                classroom.style.top = value * 0.15 + 'px';
-            
-            })
-        </script>
-        
-    </body>
-</html>
 <div class="container marketing">
 
 <hr class="featurette-divider">
