@@ -22,7 +22,7 @@ include_once "includes/config.php";
     <link href="./css/my_style.css" rel="stylesheet">
     <link href="./css/boot_style.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="parallax_style.css">
+    <link rel="stylesheet" type="text/css" href="css/parallax_style.css">
     <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/dist/js/jquery.min.js"></script>
     <script src="./js/my_script.js"></script>

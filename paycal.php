@@ -22,7 +22,7 @@ $rec_count = $row['count'];
     <head>
         <meta charset="UTF-8"><br><r><br><br>
         <title>PAYCAL®</title>
-        <link rel="stylesheet" type="text/css" href="paycal_style.css">
+        <link rel="stylesheet" type="text/css" href="css/paycal_style.css">
         <!-- <link rel="stylesheet" type="text/css" href="table_style.css"> -->
         
         

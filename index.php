@@ -6,11 +6,11 @@ include_once "header_login.php"
 <html>
     <head>
         <title>Applied 2023</title>
-        <link rel="stylesheet" type="text/css" href="parallax_style.css">
+        <link rel="stylesheet" type="text/css" href="css/parallax_style.css">
     </head>
     <body><br>
         <section>
-            <img src="classroom.png" id="classroom">
+            <img src="assets/img/classroom.png" id="classroom">
         </section>
         <script type="text/javascript">
             let classrom = document.getElementById("classroom");

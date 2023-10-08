@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="parallax_style.css">
+        <link rel="stylesheet" type="text/css" href="css/parallax_style.css">
     </head>
     <body><br><br>  
         <section>
             <!-- <img src="stars.jpg" id="stars"> -->
-            <img src="moon.png" id="moon">
-            <img src="mountain.png" id="mountain">
-            <img src="road.png" id="road">
+            <img src="assets/img/moon.png" id="moon">
+            <img src="assets/img/mountain.png" id="mountain">
+            <img src="assets/img/road.png" id="road">
             <h2 id="text">Applied 2023</h2>
         </section>
         <script type="text/javascript">

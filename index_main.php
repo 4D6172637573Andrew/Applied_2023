@@ -13,7 +13,7 @@ include_once "parallax.php";
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
   <title>Placeholder</title>
   <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500.jpg" width="100%" height="100%" />
+  <image href="assets/img/500.jpg" width="100%" height="100%" />
 </svg>  
 <div class="card-body">
     <h5 class="card-title">PAYCAL®</h5>
@@ -27,7 +27,7 @@ include_once "parallax.php";
   <div class="card" style="width: 18rem;">
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
   <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500(2).jpg" width="100%" height="100%" />
+  <image href="assets/img/500(2).jpg" width="100%" height="100%" />
 </svg>  
 <div class="card-body">
     <h5 class="card-title">CRUD</h5>
@@ -40,7 +40,7 @@ include_once "parallax.php";
   <div class="col-lg-4">
   <div class="card" style="width: 18rem;">
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">  <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500(3).jpg" width="100%" height="100%" />
+  <image href="assets/img/500(3).jpg" width="100%" height="100%" />
 </svg>    
 <div class="card-body">
     <h5 class="card-title">HANGMAN</h5>
@@ -64,7 +64,7 @@ include_once "parallax.php";
   <div class="col-md-5">
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
   <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500(2).jpg" width="100%" height="100%" />
+  <image href="assets/img/500(2).jpg" width="100%" height="100%" />
 </svg>    
 </div>
 </div>
@@ -79,7 +79,7 @@ include_once "parallax.php";
   <div class="col-md-5 order-md-1">
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
   <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500(3).jpg" width="100%" height="100%" />
+  <image href="assets/img/500(3).jpg" width="100%" height="100%" />
 </svg>  
   </div>
 </div>
@@ -94,7 +94,7 @@ include_once "parallax.php";
   <div class="col-md-5">
   <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
   <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-  <image href="500.jpg" width="100%" height="100%" />
+  <image href="assets/img/500.jpg" width="100%" height="100%" />
 </svg>  
   </div>
 </div>

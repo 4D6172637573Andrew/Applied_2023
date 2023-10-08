@@ -1,5 +1,5 @@
 <?php
-$profpic = "bg2.jpg";
+$profpic = "assets/img/bg2.jpg";
 ?>
 
 <html>
