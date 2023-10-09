@@ -30,7 +30,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <b><h3 class="modal-title" id="edit_values_label">Edit Values</h3></b>
+                <b><h3 class="modal-title" id="edit_values_label">Edit Values </h3></b>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -43,7 +43,7 @@
                                            id="edit_values_label">Rate:</label>
                                 </td>
                                 <td>
-                                    <input name="edit_values_rate" id="edit_values_rate" type="number" value="50.84"
+                                    <input name="edit_values_rate" id="edit_values_rate" type="number" value="50"
                                            class="form-control numeric" min="0.00" max="9999.99">
                                 </td>
                             </tr>
@@ -54,7 +54,7 @@
                                 </td>
                                 <td>
                                     <input name="edit_values_uni_allow" id="edit_values_uni_allow" type="number"
-                                           value="1.44"
+                                           value="2"
                                            class="form-control numeric" min="0.00" max="9.99">
                                 </td>
                             </tr>
@@ -64,7 +64,7 @@
                                            id="edit_values_lau_allow_label">Laundry Allowance:</label>
                                 </td>
                                 <td>
-                                    <input name="edit_values_lau_allow" id="edit_values_lau_allow" type="number" value="0.38"
+                                    <input name="edit_values_lau_allow" id="edit_values_lau_allow" type="number" value="1"
                                            class="form-control numeric" min="0.00" max="9999.99">
                                 </td>
                             </tr>
@@ -91,7 +91,7 @@
                             <tr>
                                 <td>
                                     <label class="form-check-label" for="edit_values_s_time"
-                                           id="edit_fixed_values_s_time_label">Start Time:</label>
+                                           id="edit_values_s_time_label">Start Time:</label>
                                 </td>
                                 <td>
                                     <input name="edit_values_s_time" id="edit_values_s_time" type="time"

@@ -51,8 +51,6 @@ $(document).on('click', '.row_delete', function (event) {
     });
 });
 
-
-
 $(document).on('click', "#btn_add_shift", function (event) {
   event.preventDefault();
 
@@ -86,99 +84,47 @@ function generateFormObject() {
   return formObject;
 }
 
-$(document).on('click', ".btn_edit_fixed", function () {
-    $.ajax({
-        url: "fixed_row.php",
-        method: "POST",
-        success: function (response) {
-            response = JSON.parse(response);
+$(document).on('click', ".btn_edit_values", function () {
+  var recordID = $(this).data('row-id');
 
-            var id = response.id;
-            var help = response.help;
-            var sal_pack = response.sal_pack;
-            var other_income = response.other_income;
-            var other_deduct = response.other_deduct;
-            var sat_penalty = response.sat_penalty;
-            var sun_penalty = response.sun_penaltyF
-            var tax = response.tax;
+  $.ajax({
+      url: "edit_values.php",
+      method: "POST",
+      data: { id: recordID },
+      success: function (response) {
+          response = JSON.parse(response);
 
-            $('#edit_fixed_row_id').val(id);
-            $('#edit_fixed_row_help').val(help);
-            $('#edit_fixed_row_sal_pack').val(sal_pack);
-            $('#edit_fixed_row_other_income').val(other_income);
-            $('#edit_fixed_row_other_deduct').val(other_deduct);
-            $('#edit_fixed_row_sat_penalty').val(sat_penalty);
-            $('#edit_fixed_row_sun_penalty').val(sun_penalty);
-            $('#edit_fixed_row_tax').val(tax);
+          var rate = response.rate;
+          var uni_a = response.uni_a;
+          var lau_a = response.lau_a;
+          var pm_a = response.pm_a;
+          var s_date = response.s_date;
+          var s_time = response.s_time;
+          var e_time = response.e_time;
+          var s_holi = response.s_holi;
+          var e_holi = response.e_holi;
 
-            $('#edit_value').modal('show');
-        }
-    });
-});
+          $('#edit_values_rate').val(rate);
+          $('#edit_values_uni_allow').val(uni_a);
+          $('#edit_values_lau_allow').val(lau_a);
+          $('#edit_values_pm_allow').val(pm_a);
+          $('#edit_values_s_date').val(s_date);
+          $('#edit_values_s_time').val(s_time);
+          $('#edit_values_e_time').val(e_time);
 
+          if (s_holi === "1") {
+              $('#s_holi').prop('checked', true);
+          } else {
+              $('#s_holi').prop('checked', false);
+          }
 
+          if (e_holi === "1") {
+              $('#e_holi').prop('checked', true);
+          } else {
+              $('#e_holi').prop('checked', false);
+          }
 
-
-
-
-
-
-
-$(function() {
-  $(".doodleEdit").dblclick(function(e) {
-    e.stopPropagation();
-    var currentEle = $(e.target);
-    var value = $(e.target).html();
-
-    console.log($(e.target));
-
-    if ($.trim(value) === "") {
-      $(currentEle).data('mode', 'add');
-    } else {
-      $(currentEle).data('mode', 'edit');
-    }
-    updateVal(currentEle, value);
+          $('#edit_values_form').modal('show');
+      }
   });
 });
-
-function updateVal(currentEle, value) {
-
-  $(currentEle).html('<input class="thVal" type="text" value="' + value + '" />');
-
-  var mode = $(currentEle).data('mode');
-  alert(mode);
-
-  $(".thVal").focus();
-  $(".thVal").keyup(function(event) {
-    if (event.keyCode == 13) {
-      $(this).parent().html($(this).val().trim());
-      $(".thVal").remove();
-    }
-  });
-}
-
-$(document).click(function(e) {
-  if ($(".thVal") !== undefined) {
-    if ($(".thVal").val() !== undefined) {
-      $(".thVal").parent().html($(".thVal").val().trim());
-      $(".thVal").remove();
-    }
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

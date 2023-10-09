@@ -171,23 +171,19 @@ $rec_count = $row['count'];
         <td style="text-align:right;">' . $lau_allow . '</td>
         <td style="text-align:right;">' . $pm_allow . '</td>
         <td style="text-align:center;">
+        
+        <a href="#" title="Delete" class="row_delete"  style="color: black; 
+        font-size:20px;
+        " data-row-id="' . $row["id"] . '"><i class="btn fa fa-trash-o">
+        </i>
+        </a>
+       
+        <a href="#" title="Edit" class="btn_edit_values" data-bs-toggle="modal" data-bs-target="#edit_values_form" style="color: black;
+        font-size:20px;
+        " data-row-id="' . $row["id"] . '"><i class="fa fa-pencil-square-o" aria-hidden="true">
+        </i>
+        </a>  
 
-        <a href="#" 
-        title="Delete" 
-        class="row_delete"  
-        style="color: black;
-        font-size:20px;" 
-        data-row-id="' . $row["id"] . '">
-    <i class="btn fa fa-trash-o"></i>
-</a>
-<a href="#" 
-title="Delete" 
-class="btn_edit_values" data-bs-toggle="modal" data-bs-target="#edit_values_form"
-style="color: black;
-font-size:20px;" 
-data-row-id="' . $row["id"] . '">
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-</a>       
         </td>
         </tr>
         ';
@@ -213,38 +209,8 @@ data-row-id="' . $row["id"] . '">
         include_once "payProject_modal_fixed_form.php";
         include_once "payProject_modal_fixed_update.php";
         include_once "Edit_values_form.php";
+        include_once "Edit_values_update.php";
         ?>
 
 
-                   <!-- <div class="form-group">-->
-                       <!-- <label for="sat_pe">Saturday penalty:</label>-->
-        <!--                <input type="number" class="form-control mb-3" id="sat_pe" name="sat_pe" placeholder="Enter Rate">-->
-        <!--            </div>-->
-        <!--            <div class="form-group">-->
-        <!--                <label for="sun_pe">Saturday penalty:</label>-->
-        <!--                <input type="number" class="form-control mb-3" id="sun_pe" name="sun_pe" placeholder="Enter Rate">-->
-        <!--            </div>-->
-        <!--            <div class="form-group">-->
-        <!--                <label for="other_in">Tax:</label>-->
-        <!--                <input type="number" class="form-control mb-3" id="other_in" name="other_in" placeholder="Enter Rate">-->
-        <!--            </div>-->
-        <!-- <div class="form-group">
-                    <label for="rate">Hourly Rate:</label>
-                    <input type="number" class="form-control mb-3" id="rate" name="rate" placeholder="Enter Rate"
-                           value="50.84">
-                </div> -->
-        <!-- <div class="form-group">
-            <label for="pm_a">PM allowance</label>
-            <input type="number" class="form-control mb-3" id="pm_a" name="pm_a" placeholder="Enter Allowance"
-                   value="0.38">
-        </div> -->
-        <!-- <div class="form-group">
-            <label for="uni_a">Laundry Allowance</label>
-            <input type="number" class="form-control mb-3" id="lau_a" name="lau_a" placeholder="Enter Allowance"
-                   value="0.38">
-        </div> -->
-        <!-- <div class="form-group">
-            <label for="uni_a">Uniform Allowance</label>
-            <input type="number" class="form-control mb-3" id="uni_a" name="uni_a" placeholder="Enter Allowance"
-                   value="1.44">
-        </div> -->
+                  

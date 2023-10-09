@@ -130,6 +130,7 @@ header ul li a:hover
     z-index: 1;
 }
 ::-webkit-scrollbar {
+    color: white;
     width: 10px;
   }
   ::-webkit-scrollbar-track {
@@ -141,7 +142,7 @@ header ul li a:hover
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: orange; 
+    background: rgb(255, 172, 17);
   }
 
   
