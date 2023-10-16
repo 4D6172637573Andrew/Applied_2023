@@ -31,7 +31,6 @@ body
     width: 68%; /* use 68% to match other input boxes */
     padding: 10px; 
     border: 1px solid rgba(189,189,189);
-    background: white;
     border-radius: 5px;
     outline: none;
     color: black;
@@ -82,9 +81,10 @@ body
             }
 
             .table-body {
+                font-size: 10px;
                 height: 375px;
-                width: 575px;
-                overflow-y: auto;
+                width: 625px;
+                overflow-x: auto;
             }
 
             .fixed-header {
@@ -203,7 +203,7 @@ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg
     left: -100%;
     width: 100%;
     height: 15%;
-    transition: left 0.5s;
+    transition: left 0.45s;
   }
   
   button::after {
@@ -211,7 +211,7 @@ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg
     right: -100%;
     width: 100%;
     height: 15%;
-    transition: right 0.5s;
+    transition: right 0.45s;
   }
   
   button:hover::before {

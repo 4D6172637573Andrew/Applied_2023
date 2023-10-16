@@ -16,11 +16,6 @@ function generateFormObject() {
 
 }
 
-$(document).on('click', ".calculate_pay", function (event) {
-    event.preventDefault();
-    alert("calculate pay function is not functional yet.");
-    console.log('this no funtion L hahaha lmao trashy noob');
-});
 
 $(document).on('click', '.delete_shift', function (event) {
     $.ajax({
@@ -85,46 +80,64 @@ function generateFormObject() {
 }
 
 $(document).on('click', ".btn_edit_values", function () {
-  var recordID = $(this).data('row-id');
+    var recordID = $(this).data('row-id');
 
-  $.ajax({
-      url: "edit_values.php",
-      method: "POST",
-      data: { id: recordID },
-      success: function (response) {
-          response = JSON.parse(response);
+    console.log("Record ID: " + recordID); // Add this line for debugging
+    
+    $.ajax({
+        url: "edit_values.php",
+        method: "POST",
+        data: { id: recordID },
+        success: function (response) {
+            console.log("AJAX response: " + response); // Add this line for debugging
+            response = JSON.parse(response);
 
-          var rate = response.rate;
-          var uni_a = response.uni_a;
-          var lau_a = response.lau_a;
-          var pm_a = response.pm_a;
-          var s_date = response.s_date;
-          var s_time = response.s_time;
-          var e_time = response.e_time;
-          var s_holi = response.s_holi;
-          var e_holi = response.e_holi;
+            var rate = response.rate;
+            var uni_a = response.uni_allow;
+            var lau_a = response.lau_allow;
+            var pm_a = response.pm_allow;
+            var s_date = response.s_date;
+            var s_time = response.s_time;
+            var e_time = response.e_time;
+            var s_holi = response.s_holi;
+            var e_holi = response.e_holi;
 
-          $('#edit_values_rate').val(rate);
-          $('#edit_values_uni_allow').val(uni_a);
-          $('#edit_values_lau_allow').val(lau_a);
-          $('#edit_values_pm_allow').val(pm_a);
-          $('#edit_values_s_date').val(s_date);
-          $('#edit_values_s_time').val(s_time);
-          $('#edit_values_e_time').val(e_time);
+            $('#edit_values_rate').val(rate);
+            $('#edit_values_uni_allow').val(uni_a);
+            $('#edit_values_lau_allow').val(lau_a);
+            $('#edit_values_pm_allow').val(pm_a);
+            $('#edit_values_s_date').val(s_date);
+            $('#edit_values_s_time').val(s_time);
+            $('#edit_values_e_time').val(e_time);
 
-          if (s_holi === "1") {
-              $('#s_holi').prop('checked', true);
-          } else {
-              $('#s_holi').prop('checked', false);
-          }
+            if (s_holi === "1") {
+                $('#edit_values_s_holi').prop('checked', true);
+            } else {
+                $('#edit_values_s_holi').prop('checked', false);
+            }
 
-          if (e_holi === "1") {
-              $('#e_holi').prop('checked', true);
-          } else {
-              $('#e_holi').prop('checked', false);
-          }
+            if (e_holi === "1") {
+                $('#edit_values_e_holi').prop('checked', true);
+            } else {
+                $('#edit_values_e_holi').prop('checked', false);
+            }
 
-          $('#edit_values_form').modal('show');
-      }
-  });
+            $('#edit_values_form').modal('show');
+        }
+    });
 });
+
+
+// document.getElementById('btn_calc_pay').style.display = 'block';
+//             document.getElementById('btn_open_again').style.display = 'none';
+
+//             function openAgain() {
+//                 location.reload(); 
+//             }
+
+//             function showDiv() {
+//                 document.getElementById('btn_calc_pay').style.display = 'none';
+//                 document.getElementById('btn_open_again').style.display = 'block';
+//                 document.getElementById('pay_slip_div').style.display = 'block';
+//                 location.href = '#pay_slip_target'
+//             }

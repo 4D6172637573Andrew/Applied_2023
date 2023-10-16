@@ -23,7 +23,6 @@ $rec_count = $row['count'];
         <meta charset="UTF-8"><br><r><br><br>
         <title>PAYCAL®</title>
         <link rel="stylesheet" type="text/css" href="css/paycal_style.css">
-        <!-- <link rel="stylesheet" type="text/css" href="table_style.css"> -->
         
         
     </head>
@@ -68,7 +67,7 @@ $rec_count = $row['count'];
             <div class="form-group">
                 <input type="time" class="form-control mb-3" id="e_time" name="e_time">
             </div>
-            <h10>Don't forget to edit the fixed values! ⊳⊳⊳</h10>
+            <h10 id="dont_forget">Don't forget to edit the fixed values! ⊳⊳⊳</h10>
 
 
         </div><!-- /.col-lg-4 -->
@@ -101,9 +100,10 @@ $rec_count = $row['count'];
                 EDIT FIXED
             </button>
 
-            <button id="btn_calculate_pay" name="btn_calculate_pay" type="button"
+            <button id="btn_calc_pay" name="btn_calc_pay" type="button"
                     style="width: 90%"
-                    class="mb-3 calculate_pay shadow-sm">
+                    class="mb-3 calc_pay shadow-sm"
+                    onclick="showDiv()">
                 CALCULATE
             </button>
             
@@ -112,6 +112,7 @@ $rec_count = $row['count'];
             <br><br><br>
         </div><!-- /.col-lg-4 -->
         </form>
+    
 
 
         <div class="col-lg-5 table-body">
@@ -122,7 +123,7 @@ $rec_count = $row['count'];
                 <tr class="active-row">
                     <th class=scope="col">id</th>
                     <th class=scope="col">user_id</th>
-                    <th class="doodleEdit" scope="col">rate</th>
+                    <th class=scope="col">rate</th>
                     <th class=scope="col">s_date</th>
                     <th class=scope="col">s_time</th>
                     <th class=scope="col">s_holi</th>
@@ -161,8 +162,8 @@ $rec_count = $row['count'];
         <tr>
         <td style="text-align:right;">' . $row["id"] . '</td>
         <td style="text-align:right;">' . $row["user_id"] . '</td>
-         <td style="text-align:right;">' . $row["rate"] . '</td>
-         <td style="text-align:right;">' . $row["s_date"] . '</td>
+        <td style="text-align:right;">' . $row["rate"] . '</td>
+        <td style="text-align:right;">' . $row["s_date"] . '</td>
         <td style="text-align:right;">' . $row["s_time"] . '</td>
         <td style="text-align:right;">' . $s_holi . '</td>
         <td style="text-align:right;">' . $row["e_time"] . '</td>
@@ -172,13 +173,13 @@ $rec_count = $row['count'];
         <td style="text-align:right;">' . $pm_allow . '</td>
         <td style="text-align:center;">
         
-        <a href="#" title="Delete" class="row_delete"  style="color: black; 
+        <a href="#" title="Delete" id="delete_row" class="row_delete"  style="color: black ;
         font-size:20px;
         " data-row-id="' . $row["id"] . '"><i class="btn fa fa-trash-o">
         </i>
         </a>
        
-        <a href="#" title="Edit" class="btn_edit_values" data-bs-toggle="modal" data-bs-target="#edit_values_form" style="color: black;
+        <a href="#" title="Edit_values" class="btn_edit_values" data-bs-toggle="modal" data-bs-target="#edit_values_form" style="color: black;
         font-size:20px;
         " data-row-id="' . $row["id"] . '"><i class="fa fa-pencil-square-o" aria-hidden="true">
         </i>
@@ -186,6 +187,7 @@ $rec_count = $row['count'];
 
         </td>
         </tr>
+        
         ';
                     }
                 } else {
@@ -201,6 +203,48 @@ $rec_count = $row['count'];
             }
             ?>
         </div>
+        <div class="col-lg-12 " id="pay_slip_div" style="display: none;">
+            <div class="row col-lg-4 container">
+                <h1>
+                    <a id="pay_slip_target"><br></a>
+                </h1>
+                <h1 class="section-heading rectangle">Pay Slipppppppp </h1>
+                <h3><br>
+                    <a id="pay_slip_target"> Want to make changes? </a>
+                </h3>
+                <button id="btn_open_again" name="open_again" type="button"
+                class="btn-outline mx-auto shadow-sm" onclick="openAgain()"> Open Paycal Editor
+                </button>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <script>
+            document.getElementById('btn_calc_pay').style.display = 'block';
+            document.getElementById('btn_open_again').style.display = 'none';
+
+            function openAgain() {
+                location.reload(); 
+            }
+
+            function showDiv() {
+    const inputElements = document.querySelectorAll('input');
+    for (const input of inputElements) {
+        input.disabled = true;
+    }
+    document.getElementById('btn_calc_pay').style.display = 'none';
+    document.getElementById('btn_add_shift').style.display = 'none';
+    document.getElementById('btn_delete_shift').style.display = 'none';
+    document.getElementById('delete_row').style.display = 'none';
+    document.getElementById('edit_values').style.display = 'none';
+    document.getElementById('edit_fixed_row').style.display = 'none';
+    document.getElementById('dont_forget').style.display = 'none';
+    document.getElementById('btn_open_again').style.display = 'block';
+    document.getElementById('pay_slip_div').style.display = 'block';
+    location.href = '#pay_slip_target';
+}
+
+            </script>
+
+
         <?php
         mysqli_close($conn);
         ?>

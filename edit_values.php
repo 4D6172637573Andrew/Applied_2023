@@ -1,22 +1,19 @@
 <?php
-
-// $conn = mysqli_connect('localhost','root','','pay2_db');
-// // $query = "SELECT * FROM shifts WHERE user_id = '0'";
-// $query = "SELECT * FROM shifts WHERE user_id = 0";
-// $row_record = mysqli_query($conn, $query);
-// $rec = mysqli_fetch_assoc($row_record);
-// echo json_encode($rec);
-
-?>
-
-<?php
 if (!empty($_POST['id'])) {
     $id = $_POST['id'];
+    
+    // Debugging: Print the received ID to the console
+    error_log("Received ID: " . $id);
 
     $conn = mysqli_connect('localhost', 'root', '', 'pay2_db');
 
-    $query = "SELECT * FROM shifts WHERE id = ?";
-    
+    // Check the database connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $query = "SELECT rate, uni_allow, lau_allow, pm_allow, s_date, s_time, e_time, s_holi, e_holi FROM shifts WHERE id = ?";
+
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, 'i', $id);
     mysqli_stmt_execute($stmt);
@@ -32,4 +29,14 @@ if (!empty($_POST['id'])) {
 } else {
     echo json_encode(['error' => 'Invalid ID']);
 }
+?>
+
+
+<?php
+// $conn = mysqli_connect('localhost','root','','pay2_db');
+// // $query = "SELECT * FROM shifts WHERE user_id = '0'";
+// $query = "SELECT * FROM shifts WHERE user_id = 0";
+// $row_record = mysqli_query($conn, $query);
+// $rec = mysqli_fetch_assoc($row_record);
+// echo json_encode($rec);
 ?>
