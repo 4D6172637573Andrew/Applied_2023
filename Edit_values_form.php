@@ -42,7 +42,7 @@
                         <label class="form-check-label" for="edit_values_rate">Rate:</label>
                     </td>
                     <td>
-                        <input name="edit_values_rate" id="edit_values_rate" type="number" value="50" class="form-control numeric" min="0.00" max="9999.99">
+                        <input name="edit_values_rate" id="edit_values_rate" type="number" class="form-control numeric" min="0.00" max="9999.99">
                     </td>
                 </tr>
                 <tr>

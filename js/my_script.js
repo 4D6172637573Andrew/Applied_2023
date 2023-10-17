@@ -16,7 +16,6 @@ function generateFormObject() {
 
 }
 
-
 $(document).on('click', '.delete_shift', function (event) {
     $.ajax({
         url: "clear_shifts.php",
@@ -82,14 +81,14 @@ function generateFormObject() {
 $(document).on('click', ".btn_edit_values", function () {
     var recordID = $(this).data('row-id');
 
-    console.log("Record ID: " + recordID); // Add this line for debugging
+    console.log("Record ID: " + recordID); // debugging
     
     $.ajax({
         url: "edit_values.php",
         method: "POST",
         data: { id: recordID },
         success: function (response) {
-            console.log("AJAX response: " + response); // Add this line for debugging
+            console.log("AJAX response: " + response); //console: print all the pulled variables
             response = JSON.parse(response);
 
             var rate = response.rate;
@@ -128,16 +127,26 @@ $(document).on('click', ".btn_edit_values", function () {
 });
 
 
-// document.getElementById('btn_calc_pay').style.display = 'block';
-//             document.getElementById('btn_open_again').style.display = 'none';
+document.getElementById('btn_calc_pay').style.display = 'block';
+                document.getElementById('btn_open_again').style.display = 'none';
 
-//             function openAgain() {
-//                 location.reload(); 
-//             }
+                function openAgain() {
+                    location.reload();
+                }
 
-//             function showDiv() {
-//                 document.getElementById('btn_calc_pay').style.display = 'none';
-//                 document.getElementById('btn_open_again').style.display = 'block';
-//                 document.getElementById('pay_slip_div').style.display = 'block';
-//                 location.href = '#pay_slip_target'
-//             }
+                function showDiv() {
+                    const inputElements = document.querySelectorAll('input');
+                    for (const input of inputElements) {
+                        input.disabled = true;
+                    }
+                    document.getElementById('btn_calc_pay').style.display = 'none';
+                    document.getElementById('btn_add_shift').style.display = 'none';
+                    document.getElementById('btn_delete_shift').style.display = 'none';
+                    document.getElementById('delete_row').style.display = 'none';
+                    document.getElementById('edit_values').style.display = 'none';
+                    document.getElementById('edit_fixed_row').style.display = 'none';
+                    document.getElementById('dont_forget').style.display = 'none';
+                    document.getElementById('btn_open_again').style.display = 'block';
+                    document.getElementById('pay_slip_div').style.display = 'block';
+                    location.href = '#pay_slip_target';
+                }

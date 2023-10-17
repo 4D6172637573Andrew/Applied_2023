@@ -20,16 +20,18 @@ $rec_count = $row['count'];
 
 <div class="container-fluid">
     <head>
-        <meta charset="UTF-8"><br><r><br><br>
-        <title>PAYCAL®</title>
-        <link rel="stylesheet" type="text/css" href="css/paycal_style.css">
-        
-        
-    </head>
+        <meta charset="UTF-8"> shivam
+        <br>
+        <r><br><br>
+            <title>PAYCAL®</title>
+            <link rel="stylesheet" type="text/css" href="css/paycal_style.css">
+
+
+            </head>
 </div>
 
 <div class="container-fluid mb-1">
-<h1><span class="rectangle">PAYCAL®</span></h1>
+    <h1><span class="rectangle">PAYCAL®</span></h1>
 
     <div class="row">
         <div class="col-lg-2">
@@ -88,7 +90,7 @@ $rec_count = $row['count'];
                 ADD SHIFT
             </button>
 
-            <button id="btn_delete_shift" name="btn_delete_shift" type="button" 
+            <button id="btn_delete_shift" name="btn_delete_shift" type="button"
                     style="width: 90%"
                     class="mb-3 delete_shift shadow-sm">
                 CLEAR ALL
@@ -106,17 +108,15 @@ $rec_count = $row['count'];
                     onclick="showDiv()">
                 CALCULATE
             </button>
-            
 
 
             <br><br><br>
         </div><!-- /.col-lg-4 -->
         </form>
-    
 
 
-        <div class="col-lg-5 table-body">
-        <h5>Shifts:</h5>
+        <div class="col-lg-5 table-body rectangle">
+            <h5>Your Shifts:</h5>
             <table class="styled-table">
                 <thead class="thead-dark">
 
@@ -213,48 +213,25 @@ $rec_count = $row['count'];
                     <a id="pay_slip_target"> Want to make changes? </a>
                 </h3>
                 <button id="btn_open_again" name="open_again" type="button"
-                class="btn-outline mx-auto shadow-sm" onclick="openAgain()"> Open Paycal Editor
+                        class="btn-outline mx-auto shadow-sm" onclick="openAgain()"> Open Paycal Editor
                 </button>
                 <br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
-        <script>
-            document.getElementById('btn_calc_pay').style.display = 'block';
-            document.getElementById('btn_open_again').style.display = 'none';
-
-            function openAgain() {
-                location.reload(); 
-            }
-
-            function showDiv() {
-    const inputElements = document.querySelectorAll('input');
-    for (const input of inputElements) {
-        input.disabled = true;
-    }
-    document.getElementById('btn_calc_pay').style.display = 'none';
-    document.getElementById('btn_add_shift').style.display = 'none';
-    document.getElementById('btn_delete_shift').style.display = 'none';
-    document.getElementById('delete_row').style.display = 'none';
-    document.getElementById('edit_values').style.display = 'none';
-    document.getElementById('edit_fixed_row').style.display = 'none';
-    document.getElementById('dont_forget').style.display = 'none';
-    document.getElementById('btn_open_again').style.display = 'block';
-    document.getElementById('pay_slip_div').style.display = 'block';
-    location.href = '#pay_slip_target';
-}
-
+            </div>
+            <script>
+                //js for calc pay can go here if needed
             </script>
 
 
-        <?php
-        mysqli_close($conn);
-        ?>
-        <?php
-        include_once "footer.php";
-        include_once "payProject_modal_fixed_form.php";
-        include_once "payProject_modal_fixed_update.php";
-        include_once "Edit_values_form.php";
-        include_once "Edit_values_update.php";
-        ?>
+            <?php
+            mysqli_close($conn);
+            ?>
+            <?php
+            include_once "footer.php";
+            include_once "payProject_modal_fixed_form.php";
+            include_once "payProject_modal_fixed_update.php";
+            include_once "Edit_values_form.php";
+            include_once "Edit_values_update.php";
+            ?>
 
 
                   

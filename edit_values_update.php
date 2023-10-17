@@ -13,7 +13,6 @@ if (!empty($_POST)) {
             WHERE id = '" . $_POST['id'] . "'";
 
         $isUpdated = mysqli_query($conn, $query);
-
         if ($isUpdated) {
             echo "Success";
         } else {
@@ -23,7 +22,7 @@ if (!empty($_POST)) {
         echo "Invalid POST data";
     }
 } else {
-    echo "Empty POST data"; // Add this for debugging
+    echo "Empty POST data"; 
 }
 
 

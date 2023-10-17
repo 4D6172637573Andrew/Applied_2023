@@ -2,12 +2,10 @@
 if (!empty($_POST['id'])) {
     $id = $_POST['id'];
     
-    // Debugging: Print the received ID to the console
-    error_log("Received ID: " . $id);
+    error_log("Received ID: " . $id); // Debugging: Print the received ID to the console
 
     $conn = mysqli_connect('localhost', 'root', '', 'pay2_db');
 
-    // Check the database connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
@@ -34,7 +32,6 @@ if (!empty($_POST['id'])) {
 
 <?php
 // $conn = mysqli_connect('localhost','root','','pay2_db');
-// // $query = "SELECT * FROM shifts WHERE user_id = '0'";
 // $query = "SELECT * FROM shifts WHERE user_id = 0";
 // $row_record = mysqli_query($conn, $query);
 // $rec = mysqli_fetch_assoc($row_record);
